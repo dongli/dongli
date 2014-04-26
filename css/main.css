@@ -1,0 +1,91 @@
+body {
+    font-family: "Baskerville", "Helvetica", "Times New Roman", "Arial";
+    display: table;
+    border-collapse: separate;
+    border-spacing: 1em;
+}
+
+header {
+    display: table-row;
+    text-align: center;
+    width: 800px;
+}
+
+header > h1 {
+    display: table-cell;
+    border: 2px dashed #000;
+    text-align: center;
+}
+
+header > figure {
+    display: table-cell;
+    display: inline-block;
+}
+
+img.avatar {
+    width: 80px;
+    border-radius: 40px;
+}
+
+div.sidebar {
+    display: inline-block;
+    margin-right: 0;
+    width: calc(20% - 0.5em);
+    text-align: center;
+}
+
+div.content {
+    display: inline-block;
+    width: calc(77.5% - 0.5em);
+    vertical-align: top;
+    padding: 1em;
+    border: 2px dashed #000;
+}
+
+nav {
+    border: 2px dashed #000;
+}
+
+nav > ul {
+    list-style: none;
+    text-align: left;
+}
+
+section > p {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1em;
+    font-size: 1em;
+    text-align: justify;
+}
+
+section {
+    background: rgba(20, 20, 20, 0.5);
+    border: 2px solid #000;
+    border-radius: 0px 10px 0px 0px;
+    padding: 1em;
+}
+
+article {
+    background: rgba(100, 30, 30, 0.5);
+    border: 2px solid #000;
+    border-radius: 0px 10px 0px 0px;
+    padding: 1em;
+}
+
+article > p {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1em;
+    font-size: 1em;
+    text-align: justify;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+footer {
+    margin-top: 1em;
+    padding: 1em;
+    border-top: 2px solid #000;
+    text-align: center;
+}
