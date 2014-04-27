@@ -3,8 +3,10 @@ markdown: redcarpet
 pygments: true
 navigation:
  - title: Home
-   url: /index.html
+   url: index.html
+ - title: Research
+   url: research.html
  - title: Publication
-   url: /publication.html
+   url: publication.html
  - title: Plan
-   url: /plan.html
+   url: plan.html
