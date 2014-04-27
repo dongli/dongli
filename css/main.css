@@ -13,18 +13,21 @@ header {
 
 header > h1 {
     display: table-cell;
-    border: 2px dashed #000;
     text-align: center;
 }
 
-header > figure {
-    display: table-cell;
+figure {
     display: inline-block;
+    margin: 0;
 }
 
 img.avatar {
-    width: 80px;
-    border-radius: 40px;
+    width: 120px;
+    border-radius: 60px;
+    text-align: center;
+    -moz-box-shadow:2px 2px 5px #333333;
+    -webkit-box-shadow:2px 2px 5px #333333;
+    box-shadow:2px 2px 5px #333333;
 }
 
 img.small-logo {
@@ -39,9 +42,13 @@ div.sidebar {
 }
 
 div.social-network-contacts {
+    background: rgba(80, 152, 210, 1);
     padding: 1em;
-    border: 2px dashed #000;
-    text-align: left;
+    text-align: center;
+    border-radius: 0px 0px 10px 10px;
+    -moz-box-shadow:2px 2px 5px #333333;
+    -webkit-box-shadow:2px 2px 5px #333333;
+    box-shadow:2px 2px 5px #333333;
 }
 
 div.content {
@@ -49,19 +56,43 @@ div.content {
     width: calc(77.5% - 0.5em);
     vertical-align: top;
     padding: 1em;
-    border: 2px dashed #000;
 }
 
 nav {
-    border: 2px dashed #000;
+    padding: 0.5em;
+    background: rgba(229, 75, 54, 1);
+    border-radius: 10px 10px 0px 0px;
+    -moz-box-shadow:2px 2px 5px #333333;
+    -webkit-box-shadow:2px 2px 5px #333333;
+    box-shadow:2px 2px 5px #333333;
 }
 
-nav > ul {
+nav ul {
     list-style: none;
-    text-align: left;
+    padding: 0;
+    text-align: right;
 }
 
-section > p {
+nav ul li a {
+    font-weight: bold;
+    color: rgb(255, 253, 56);
+}
+
+nav li.current a {
+    display: block;
+    background: rgb(61, 203, 107);
+    border-radius: 5px 5px 5px 5px;
+    padding: 0.5em;
+    -moz-box-shadow:2px 2px 5px #333333;
+    -webkit-box-shadow:2px 2px 5px #333333;
+    box-shadow:2px 2px 5px #333333;
+}
+
+a:visited {
+    color: inherit;
+}
+
+section p {
     background: rgba(0, 0, 0, 0.2);
     padding: 1em;
     font-size: 1em;
@@ -70,27 +101,26 @@ section > p {
 
 section {
     background: rgba(20, 20, 20, 0.5);
-    border: 2px solid #000;
     border-radius: 0px 10px 0px 0px;
     padding: 1em;
 }
 
 article {
-    background: rgba(100, 30, 30, 0.5);
-    border: 2px solid #000;
-    border-radius: 0px 10px 0px 0px;
+    background: rgb(61, 203, 107);
+    border-radius: 10px 10px 10px 10px;
     padding: 1em;
+    -moz-box-shadow:2px 2px 5px #333333;
+    -webkit-box-shadow:2px 2px 5px #333333;
+    box-shadow:2px 2px 5px #333333;
 }
 
-article > p {
-    background: rgba(0, 0, 0, 0.2);
-    padding: 1em;
-    font-size: 1em;
+article p, ul {
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0em;
+    padding-bottom: 0em;
+    font-size: 1.2em;
     text-align: justify;
-}
-
-h1 {
-    font-size: 2em;
 }
 
 footer {
@@ -98,4 +128,8 @@ footer {
     padding: 1em;
     border-top: 2px solid #000;
     text-align: center;
+}
+
+h1 {
+    font-size: 2em;
 }

@@ -1,3 +1,10 @@
 name: Li Dong's Website
 markdown: redcarpet
 pygments: true
+navigation:
+ - title: Home
+   url: /index.html
+ - title: Publication
+   url: /publication.html
+ - title: Plan
+   url: /plan.html
