@@ -27,11 +27,21 @@ img.avatar {
     border-radius: 40px;
 }
 
+img.small-logo {
+    width: 40px;
+}
+
 div.sidebar {
     display: inline-block;
     margin-right: 0;
     width: calc(20% - 0.5em);
     text-align: center;
+}
+
+div.social-network-contacts {
+    padding: 1em;
+    border: 2px dashed #000;
+    text-align: left;
 }
 
 div.content {
