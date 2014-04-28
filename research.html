@@ -6,10 +6,30 @@ title: Research
 <article>
 	<h1>Lagrangian Advection scheme with Shape Matrix (LASM)</h1>
 	<p>
-		This is a continuing work of my PhD research, toward a new practical advection scheme constructed in Lagrangian framework which can be applied in the atmospheric general circulation model (AGCM). The major starting point is to reduce the numerical diffusion error revealed in Eulerian schemes (including semi-Lagrangian schemes).
+        This is a continuing work of my PhD research, toward a new practical
+        advection scheme constructed in Lagrangian framework which can be
+        applied in the atmospheric general circulation model (AGCM). The major
+        starting point is to reduce the numerical diffusion error revealed in
+        Eulerian schemes (including semi-Lagrangian schemes).
 	</p>
 	<p>
-		Previously, I have constructed two Lagrangian schemes with different discretization fashions, namely TTS-C (Dong and Wang, 2012) and TTS-I (Dong and Wang, 2013). Both of them exhibit lower numerical diffusion as expected. In TTS-C, the continuous tracer is discretized into parcel centroids with finite number.
+        Previously, I have constructed two Lagrangian schemes with different
+        discretization fashions, namely TTS-C (Dong and Wang, 2012) and TTS-I
+        (Dong and Wang, 2013). Both of them exhibit lower numerical diffusion
+        as expected. In TTS-C, the continuous tracer is discretized into parcel
+        centroids with finite number.
 	</p>
+    <p>
+        Previously, I have constructed two Lagrangian schemes with different
+        discretization fashions, namely TTS-C (Dong and Wang, 2012) and TTS-I
+        (Dong and Wang, 2013). Both of them exhibit lower numerical diffusion
+        as expected.
+    </p>
+    <p>
+        In TTS-C, the continuous tracer is discretized into parcel centroids
+        with finite number, which carry tracer density and move around under
+        the influence of the flow. The density is time varying according to the
+        flow divergence, and it is remapped onto the grids of the model (e.g.
+        AGCM) by using the inverse-distance weight (IDW) interpolation.
 	<p>To be continued ...</p>
 </article>
