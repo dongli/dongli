@@ -1,5 +1,5 @@
 body {
-    font-family: "Baskerville", "Helvetica", "Times New Roman", "Arial";
+    font-family: "Baskerville", "Times New Roman", "Helvetica", "Arial";
     display: table;
     border-collapse: separate;
     border-spacing: 1em;
@@ -17,8 +17,10 @@ header > h1 {
 }
 
 figure {
-    display: inline-block;
-    margin: 0;
+    display: table;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
 }
 
 img.avatar {

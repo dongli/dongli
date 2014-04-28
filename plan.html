@@ -6,9 +6,15 @@ title: Current Plan
 <article>
     <h1>Model diagnostics platform</h1>
     <p>
-        The performance of a climate model (e.g. atmospheric model or oceanic model or even coupled model) is evaluated by plenty of metrics. Every model will have its strength and weakness, so the synthetical metrics must be consulted when judging the model. The most simple and used metric is the climatology of many quantities, but the more interesting information come from the more complex metrics, such as MJO, which give the prospect of the coupled processes in the climate system.
+        The performance of a climate model (e.g. atmospheric model or oceanic model or even coupled model) is evaluated by plenty of metrics. Every model will have its strength and weakness, so the synthetical metrics must be consulted when judging the model. The most simple and used metric is the climatology of many quantities, but the more interesting information come from the more complex metrics, such as MJO, which give the prospect of the coupled processes in the climate system. To ease the burden of model development, we plan to construct a platform for evaluating model simulation results with sufficient standardized diagnostics (organized as packages). The <a href="https://lasg-model.github.com/geodiag">GEODIAG</a> platform initiated by me is a good starting point. It is built by BASH for framework and NCL for data analysis and visualization for the time being.
     </p>
     <p>
-        To ease the burden of model development, we plan to construct a platform for evaluating model simulation results with sufficient standardized diagnostics (organized as packages).
+	    The first step is to unify the data interface so that the developers of diagnostics packages will face the same data format. The possible solution is the <a href="http://www2-pcmdi.llnl.gov/cmor">CMOR</a> library, which is already used in CMIP5. We can construct a middle layer to separate the model data and the diagnostics package as shown in the following figure.
+    </p>
+    <figure>
+	    <img src="assets/pictures/geodiag_cmor.png" style="width:80%">
+    </figure>
+    <p>
+    	The main task of this middle layer is to interpolate the model data from diverse meshes onto a standard lat-lon mesh. The model mesh should be described in a standard way, such as "lat-lon", "cubed-sphere". The vertical coordinate is also a matter needs attention. The mosted used vertical coordinate in the climate models is "hybrid pressure sigma".
     </p>
 </article>
