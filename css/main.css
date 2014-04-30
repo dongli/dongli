@@ -125,6 +125,12 @@ article p, ul {
     text-align: justify;
 }
 
+article li {
+    margin: 1em;
+    font-size: 1.1em;
+    text-align: justify;
+}
+
 footer {
     margin-top: 1em;
     padding: 1em;

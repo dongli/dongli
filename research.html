@@ -4,7 +4,7 @@ title: Research
 ---
 
 <article>
-	<h1>Lagrangian Advection scheme with Shape Matrix (LASM)</h1>
+	<h1>Lagrangian advection schemes</h1>
 	<p>
         This is a continuing work of my PhD research, toward a new practical
         advection scheme constructed in Lagrangian framework which can be
@@ -26,10 +26,51 @@ title: Research
         as expected.
     </p>
     <p>
+        <figure>
+            <img src="assets/pictures/my_scheme_schemas.png" style="width:80%">
+            <figcaption>
+                <b>Fig. 1</b> The schemas of my three Lagrangian schemes.
+            </figcaption>
+        </figure>
+    </p>
+    <p>
         In TTS-C, the continuous tracer is discretized into parcel centroids
         with finite number, which carry tracer density and move around under
         the influence of the flow. The density is time varying according to the
         flow divergence, and it is remapped onto the grids of the model (e.g.
-        AGCM) by using the inverse-distance weight (IDW) interpolation.
+        AGCM) by using the inverse-distance weight (IDW) interpolation. This is
+        the first Lagrangian scheme that I have ever made, so it is simple in
+        concept and shows the good merit of Lagrangian schemes (much lower
+        numerical diffusion). But there are some weak points:
+        <ul>
+            <li>
+                The total mass on the grids is not guaranteed to conserved on
+                the model grids, and it is not possible to define the mass
+                carried by a parcel, since the parcels have no shape and then
+                no definite volume. (<i>Actually, the volume can be defined as
+                in HEL scheme (Kaas et al. 2013).</i>)
+            </li>
+            <li>
+                There exists <i>aliasing error</i> or <i>spectral blocking</i>,
+                because the parcels have no shape and the remapping procedures
+                involve only distance information, but in deformative flow the
+                parcel shape will no longer keep compact and turn to be long
+                filament espectially in high shear region. (ATTILA (Reithmeier
+                and Sausen 2002) and HEL use mixing among parcels to reduce
+                this error for long time simulation)
+            </li>
+        </ul>
+    </p>
+    <p>
+        To address the above weak points, I wondered how to describe the shape
+        of the parcel. At first, I found out
+        <a href="http://en.wikipedia.org/wiki/Voronoi_diagram">Voronoi diagram</a>
+        that is good at partition space according to given data set. It looks
+        like the cure for my problem and I can let parcel carry mass, but it
+        turned out that the construction of this diagram can not take into
+        account of the flow deformation. Although this path has been blocked, I
+        had an idea that I should use polygon to describe the interface (or shape)
+        of the parcels.
+    </p>
 	<p>To be continued ...</p>
 </article>
