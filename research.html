@@ -8,9 +8,14 @@ title: Research
 	<p>
         This is a continuing work of my PhD research, toward a new practical
         advection scheme constructed in Lagrangian framework which can be
-        applied in the atmospheric general circulation model (AGCM). The major
-        starting point is to reduce the numerical diffusion error revealed in
-        the Eulerian schemes (including semi-Lagrangian schemes).
+        applied in the atmospheric general circulation model (AGCM). The
+        advection equation is as following
+        \[
+            \frac{\partial \rho}{\partial t} + \mathbf{V}\cdot\nabla{\rho} =
+            -\rho\nabla\cdot\mathbf{V}
+        \]
+        The major starting point is to reduce the numerical diffusion error
+        revealed in the Eulerian schemes (including semi-Lagrangian schemes).
 	</p>
     <p>
         Previously, I have constructed two Lagrangian schemes with different
@@ -62,8 +67,42 @@ title: Research
         like the cure for my problem and I can let parcel carry mass, but it
         turned out that the construction of this diagram can not take into
         account of the flow deformation. Although this path has been blocked, I
-        had an idea that I should use polygon to describe the interface (or shape)
-        of the parcels.
+        had an idea that I should use polygon to describe the interface (or
+        shape) of the parcels. So it came out TTS-I with the parcel interface
+        discretized as a polygon in 2D. The details can be found in Dong and
+        Wang (2013) where a complicate curvature guard algorithm has been
+        devised. This algorithm dynamically inserts or removes edges from the
+        polygon to capture the curvature changes in the deformational flow. In
+        the deformation test flow proposed by Nair and Lauritzen (2010), TTS-I
+        showed good performance of preserving discontinuity, filament and
+        tracer correlation. The aliasing error mentioned in Kaas et al. (2013)
+        did not appear! So we can deduce from this observation that <b>the
+        aliasing error is caused by not simulating the shape of parcels</b>.
+        As TTS-C, TTS-I has the vital shortcoming: The polygon is only valid
+        in 2D. When applied to 3D, either the polyhedra or a quasi-2D vertical
+        coordinate should be used. The former will deadly increase the
+        complexity of the scheme and is not practical. The latter will
+        introduce vertical remapping which is not very preferred.
+    </p>
+    <p>
+        After being in a dilemma for a while, I found the Finite Mass Method
+        (FMM), which uses the <b>linear transformation matrix</b> to describe
+        the shape of parcels. In other words, the parcel can translate, rotate
+        and change size.
+    </p>
+    <p>
+        <figure>
+            <img src="assets/pictures/mix_vs_not_mix.png" style="width:80%">
+            <figcaption>
+                <b>Fig. 2</b> The effects of interparcel mixing in LASM shown
+                in deformation test case with the slotted cylinders initial
+                condition. The control parameters are \(\gamma_s\),
+                \(\beta_1\) and \(\beta_2\). With smaller \(\gamma_s\), the
+                parcel spliting and merging operations (i.e. mixing) will be
+                triggered more easily. \(\beta_2\) controls the degree of
+                lateral mixing, and larger value means less lateral mixing.
+            </figcaption>
+        </figure>
     </p>
 	<p>To be continued ...</p>
 </article>

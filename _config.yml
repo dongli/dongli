@@ -1,6 +1,6 @@
 name: Li Dong's Website
-markdown: redcarpet
-pygments: true
+markdown: kramdown
+highligher: pygments
 navigation:
  - title: Home
    url: index.html
