@@ -92,26 +92,47 @@ title: Research
     </p>
     <p>
         Figure 2 is the latest results of LASM, which exhibits the effects of
-        parcel splitting and merging operations. The experiment setup follows
+        the interparcel mixing. The experiment setup follows
         the deformation test case (<a href="http://www.sciencedirect.com/science/article/pii/S0021999110004511">Nair and Lauritzen 2010</a>; <a
         href="http://www.geosci-model-dev-discuss.net/5/189/2012/gmdd-5-189-2012.html">Lauritzen et al.
         2012</a>) with non-divergent flow. The initial condition is two
         slotted cylinders that are discontinuous. The left column contains
         interparcel mixing, whereas the right column does not. So it can be
-        seen that the parcel merging operation introduces some interparcel
+        seen that the mixing operation introduces some interparcel
         mixing, but the degree is highly acceptable.
         <figure>
             <img src="assets/pictures/mix_vs_not_mix.png" style="width:80%">
             <figcaption>
                 <b>Fig. 2</b> The effects of interparcel mixing in LASM shown
                 in deformation test case with the slotted cylinders initial
-                condition. The control parameters are \(\gamma_s\),
-                \(\beta_1\) and \(\beta_2\). With smaller \(\gamma_s\), the
-                parcel spliting and merging operations (i.e. mixing) will be
-                triggered more easily. \(\beta_2\) controls the degree of
-                lateral mixing, and larger value means less lateral mixing.
+                condition. The control parameters are \(\gamma_m\), \(\alpha\)
+                \(\beta_1\) and \(\beta_2\). With smaller \(\gamma_m\), the
+                interparcel mixing will be triggered more easily. \(\beta_2\)
+                controls the degree of lateral mixing, and larger value means
+                less lateral mixing.
             </figcaption>
         </figure>
+    </p>
+    <p>
+        Figure 3 is the comparison with TSPAS (Two-step Shape Preserving
+        Scheme, <a
+        href="http://link.springer.com/article/10.1007%2FBF02658169">Yu
+        1994</a>), which belongs the finite difference method. In the ideal
+        deformation case, TSPAS shows unbelievably large errors (e.g numerical
+        diffusion error, shape error), but in the two barotropic cases, TSPAS
+        is more close to LASM, because the flow deformation is not that large
+        as in the deformation case.
+        <figure>
+            <img src="assets/pictures/compare_with_tspas.png" style="width:80%">
+            <figcaption>
+                <b>Fig. 3</b> Comparison between LASM and TSPAS.
+            </figcaption>
+        </figure>
+    </p>
+    <p>
+        The interparcel mixing in LASM is <b>adaptive</b> to the flow so that the
+        mixing is triggered only where the linear deformation approximation of
+        the parcel shape will be violated.
     </p>
 	<p>To be continued ...</p>
 </article>
